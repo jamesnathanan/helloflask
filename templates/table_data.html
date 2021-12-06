@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Movie Duration</title>
+	</head>
+	<body>
+		<h2> This collection belongs to {{ name }} </h2>
+		<table>
+			<tr>
+				<th>Movie</th>
+				<th>Duration</th>
+				<th>Comments</th>
+			</tr>
+			
+			{% for movie, length in movies.items()  %}
+				<tr>
+					<td>{{ movie }}</td>
+					<td>{{ length }}</td>
+					<td></td>
+				</tr>
+			
+			{% endfor %}
+		</table>
+	</body>
+
+
+
+
+</html>

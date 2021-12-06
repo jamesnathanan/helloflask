@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Watchable</title>
+	</head>
+
+	<body>
+		<h1>Movies to watch</h1>
+		<h2>This collection belongs to {{name}} </h2>
+		<h3>movies: {{ movies }}</h3>
+		<h3>First: {{ movies[0] }} </h3>
+		<h3>Last: {{ movies[-1] }} </h3>
+		<h3>middle(slicing): {{ movies[1:4] }} </h3>
+
+	<hr>
+
+	<ol>
+		{% for item in movies  %}
+			<li>{{ item }} </li>
+		{% endfor %}
+	</ol>
+
+	</body>
+
+
+
+</html>
