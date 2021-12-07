@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Data Filters</title>
+
+	</head>
+
+	<body>
+		<h1> Working with Jinja 2 Filters </h1>
+    				
+		<ul>
+		{% for movie, duration in movies|dictsort (false, 'value')  %}
+		<li>{{ movie|title }} : {{ duration|round(1) }} </li>	
+		{% endfor %}
+		
+		</ul>
+
+		<hr>
+
+		<ol type="1">
+			<li>defaule value:{{ name|default('undefined', true) }} </li><br>
+			<li>capital case: {{ film|capitalize}} </li><br>
+			<li>amount: {{ movies| length }} movies in the list</li><br>
+			<li>Fist: {{ movies|first}} </li><br>
+			<li>make a list: {{ film| list}} </li><br>
+			<li>replace: {{film|replace('carol','cookie')|upper}} </li><br>
+
+		</ol>
+
+
+	</body>
+
+
+
+
+
+
+
+
+
+</html>

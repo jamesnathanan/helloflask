@@ -44,6 +44,25 @@ def movies_plus():
 			'spiderman - homecoming': 111.48}
 	return render_template('table_data.html', movies=movies_dict, name='Sally')
 
+@app.route('/filters')
+def filter_data():
+	movies_dict = {'autopsy of jane doe': 82.14,
+			'neon demon': 63.20,
+			'ghost in a shell': 71.5,
+			'kong: skull island': 53.50,
+			'john wick 2': 82.52,
+			'spiderman - homecoming': 111.48}
+	return render_template('filter_data.html', movies=movies_dict, name=None, film='a christmas carol')	
+
+@app.route('/macros')
+def jinja_macros():
+	movies_dict = {'autopsy of jane doe': 82.14,
+			'neon demon': 63.20,
+			'ghost in a shell': 71.5,
+			'kong: skull island': 53.50,
+			'john wick 2': 82.52,
+			'spiderman - homecoming': 111.48}
+	return render_template('using_macros.html', movies=movies_dict)
 
 if __name__ == '__main__':
 	app.run(debug=True)

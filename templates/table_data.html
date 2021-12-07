@@ -3,9 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Movie Duration</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" >
 	</head>
 	<body>
 		<h2> This collection belongs to {{ name }} </h2>
+		<h3> Path for css file: {{ url_for('static', filename='css/styles.css') }} </h3>
+
+
 		<table>
 			<tr>
 				<th>Movie</th>
@@ -18,11 +22,11 @@
 					<td>{{ movie }}</td>
 					<td>{{ length }}</td>
 					{% if length <= 60 %}
-					<td>short</td>
+					<td style="color: green">short</td>
 					{% elif length > 60 and length < 70 %}
-					<td>medium</td>
+					<td style="color: blue">medium</td>
 					{% else %}
-					<td>long</td>	
+					<td style="color: red">long</td>	
 					{% endif %}
 				</tr>
 			
