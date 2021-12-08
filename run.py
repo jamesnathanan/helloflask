@@ -12,6 +12,19 @@ app.config.update(
 
 db = SQLAlchemy(app)
 
+class Publication(db.Model):
+	__tablename__ = 'publication'
+	
+	id = db.Column(db.Integer, primary_key=True)
+	name = db.Column(db.String(80), nullable=False)
+	
+	def __init__(self, id, name):
+		self.id = id
+		self.name = name
+	
+	def __repr__(self):
+		return 'The ID is {} , The Name is {} '.format(self.id, self.name)
+
 @app.route('/index')
 @app.route('/')
 def hello_world():
@@ -75,4 +88,10 @@ def jinja_macros():
 	return render_template('using_macros.html', movies=movies_dict)
 
 if __name__ == '__main__':
+	db.create_all()
 	app.run(debug=True)
+
+
+
+
+
