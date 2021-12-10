@@ -19,15 +19,14 @@ class Publication(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(80), nullable=False)
 	
-	def __init__(self, id, name):
-		self.id = id
+	def __init__(self, name):
 		self.name = name
 	
 	def __repr__(self):
-		return 'The ID is {} , The Name is {} '.format(self.id, self.name)
+		return 'Publisher is {} '.format(self.name)
 
 class Book(db.Model):
-	__tabel_name = 'book'
+	__table_name = 'book'
 
 	id = db.Column(db.Integer, primary_key=True)
 	title = db.Column(db.String(500), nullable=False, index=True)
